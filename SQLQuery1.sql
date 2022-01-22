@@ -29,6 +29,12 @@ Where location like '%Kingdom%'
 and continent is not null
 Order by InfectedPercentage Desc
 
+Select location, date, population, Max(total_cases) as HighestInfectionCount, Max((total_cases)/population)*100 as InfectedPercentage
+From PortfolioProject..CovidDeaths
+--Where location like '%Kingdom%'
+Group by location, population, date
+Order by InfectedPercentage Desc
+
 
 -- Looking at countries with highest infection rate compared to population
 Select location, MAX(total_cases) as highest_infection_count, population, MAX((total_cases/population))*100 as InfectedPercentage
