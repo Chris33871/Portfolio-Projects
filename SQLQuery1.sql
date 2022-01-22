@@ -45,6 +45,15 @@ Where continent is null
 Group by location
 Order by TotalDeathCount desc 
 
+Select location, Sum(Cast(new_deaths as int)) as TotalDeathCount
+From PortfolioProject..CovidDeaths
+-- Where location like '%states%'
+Where continent is null 
+and location not in ('World', 'European Union', 'International', 
+'Upper middle income', 'High income', 'Lower middle income', 'Low income')
+Group by location
+Order by TotalDeathCount desc
+
 
 -- Showing Countries with the Highest Death Count per Population
 Select location, MAX(CAST(total_deaths as int)) as TotalDeathCount 
