@@ -7,10 +7,7 @@ Data Cleaning
 SELECT *
 FROM dbo.NashvilleHousing
 
-SELECT 
-FROM dbo.NashvilleHousing
-WHERE 
-ORDER BY 
+
 
 ----------------------------------------------------------------------------------------------------------------------------------------
 -- Populate Property Address data
